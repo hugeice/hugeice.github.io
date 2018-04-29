@@ -2,6 +2,8 @@
 
   <head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <script>
       function get_decimal(n) {
           var d = 0;
@@ -20,7 +22,7 @@
       }
       function gen() {
           var tbody = document.getElementById('tbMain');
-          // 2λС����1λС������2λ��2λ
+          // 2位小数乘1位小数，或2位乘2位
           for ( var i=0; i < 10; i++ ) {
               var a = get_decimal(2);
               var n = 1 + Math.round(Math.random());
@@ -29,13 +31,13 @@
               var td = tbody.rows[i].cells[0];
               td.innerHTML = str;
           }
-          // ��λС������λС��
+          // 三位小数加三位小数
           for ( var i=0; i < 10; i++ ) {
               var str = '(' + (i+11) + ') ' + get_decimal(3) + '+' + get_decimal(3) + '=__________';
               var td = tbody.rows[i].cells[1];
               td.innerHTML = str;
           }
-          // ��λС������λС��
+          // 三位小数减三位小数
           for ( var i=0; i < 10; i++ ) {
               var a = get_decimal(3);
               var b = get_decimal(3);
@@ -55,14 +57,14 @@
 
   <body body onload="gen()">
 
-    <H1>�Զ����ɼ�����</H1>
-    <p>Сѧ4�꼶�£�1λС����2λС���ĳ˷�����λС���ļӼ���</p>
+    <H1>自动生成计算题</H1>
+    <p>小学4年级下，1位小数与2位小数的乘法、三位小数的加减法</p>
     <table width="900" height="600" border="0" cellspacing="0"> 
       <thead> 
 	<tr> 
-	  <th>�˷�</th> 
-	  <th>�ӷ�</th> 
-	  <th>����</th> 
+	  <th>乘法</th> 
+	  <th>加法</th> 
+	  <th>减法</th> 
 	</tr>  
       </thead> 
       <tbody id="tbMain">
@@ -78,7 +80,7 @@
 	<tr><td>(10)</td><td>(20)</td><td>(30)</td></tr>
       </tbody> 
     </table>
-    <button type="button" onclick="gen()">��һ��</button>
+    <button type="button" onclick="gen()">换一批</button>
     
   </body>
 
